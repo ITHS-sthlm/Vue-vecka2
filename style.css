@@ -2,21 +2,37 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-   
+   align-items: center;
+   text-align: center;
+
 }
 html {
     font-family: 'Oswald', sans-serif;
   }
 
+#fetch{
+    margin-bottom:10vh;
+}
+
+.center{
+    text-decoration: none;
+    list-style: none;
+
+}
 
 /* Start */
 
-#app{
+#app, #app2, #app3, #app4, #app8{
+    display: flex;
+    justify-content: center;
+    margin-top:2vh;
+}
+
+#component{
     display: flex;
     justify-content: center;
     margin-top:20vh;
 }
-
 
 .header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -29,10 +45,10 @@ html {
     width: 90%;
     max-width: 40rem;
   }
-  
+
   #img{
    align-items: center;
-   margin: 0 auto;    
+   margin: 0 auto;
    width:20%;
   }
   #random {
@@ -44,14 +60,14 @@ html {
     width: 90%;
     max-width: 40rem;
   }
-  
+
   #random h2 {
     font-size: 2rem;
     border-bottom: 4px solid #ccc;
     color:  #254034;
     margin: 0 0 1rem 0;
   }
-  
+
   #random p {
     font-size: 1.25rem;
     font-weight: bold;
@@ -65,18 +81,18 @@ html {
   #random a {
   color: white;
   }
-  
+
   #random input {
     font: inherit;
     border: 1px solid #ccc;
   }
-  
+
   #random input:focus {
     outline: none;
     border-color:  #254034;
     background-color: #d7fdeb;
   }
-  
+
   #random button {
     font-size: 1.25rem;
     font-weight: bold;
@@ -86,14 +102,14 @@ html {
     padding: 0.5rem;
     border-radius: 25px;
   }
-  
+
   #random button:hover,
   #random button:active {
     background-color: #ec3169;
     border-color: #ec3169;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
   }
-  
+
   .center{
     display: flex;
     justify-content: center;
@@ -109,9 +125,9 @@ html {
   }
 
   /* MyTasks */
-  
+
 #myTask {
-  
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin:0 auto;
   border-radius: 10px;
@@ -523,7 +539,7 @@ input[type="checkbox"]{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
- 
+
 }
 html {
   font-family: 'Oswald', sans-serif;
@@ -553,7 +569,7 @@ html {
 
 #img{
  align-items: center;
- margin: 0 auto;    
+ margin: 0 auto;
  width:20%;
 }
 #random {
@@ -849,6 +865,7 @@ font-size: 1rem;
 letter-spacing: 0.5px;
 margin: 0.5rem 0;
 }
+
 
 .btn {
 border: none;
