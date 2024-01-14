@@ -2,8 +2,9 @@
 const message = Vue.createApp({
     data(){
       return {
-        message: "Week 3 with VUE"
+        message: "Lektionsvecka 2 med Vue"
       }
     }
   });
   message.mount('#message');
+
