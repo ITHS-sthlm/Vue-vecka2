@@ -1,24 +1,102 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Lektionsvecka 2</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap");
-    </style>
-    <script src="https://unpkg.com/vue@3"></script>
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Lektionsvecka 2</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+        </style>
+        <script src="https://unpkg.com/vue@3"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section id="message" class="header">
+            <h1>{{message}}</h1>
+        </section>
 
-  </head>
-  <body>
+        <!-- Komponent med en fetch, GET och POST -->
+        <div id="component">
+            <component-example></component-example>
+        </div>
 
-    <section id="message" class="header">
-      <h1>{{message}}</h1>
-    </section>
+        <!-- Props, tar in värde via propsnamnet start, denna gång som sträng utan v-bind -->
+        <h2>Komponent med props utan v-bind</h2>
+        <div id="app">
+            <counter-button start="2"></counter-button>
+        </div>
 
+        <!-- Props, tar in värde via propsnamnet start, denna gång som rätt datatyp och med v-bind -->
+        <h2>Komponent med props och med v-bind</h2>
+        <div id="app2">
+            <counter-button :start="1"></counter-button>
+        </div>
 
-    <script src="app.js"></script>
-    <script src="appWidget.js"></script>
-  </body>
+        <!-- Props, tar in värde via propsnamnet start, denna gång som rätt datatyp och med v-bind och
+        med 3 komponenter samtidigt fast 3 olika propsvärden -->
+        <h2>Flera komponenter med props och med v-bind</h2>
+        <div id="app3">
+            <counter-button :start="10"></counter-button>
+            <counter-button :start="20"></counter-button>
+            <counter-button :start="30"></counter-button>
+        </div>
+
+        <!-- Props, tar in värde via propsnamnet start, denna gång som rätt datatyp och med v-bind och
+        med 3 komponenter samtidigt fast 3 olika propsvärden och denna gång med typsäkerhet -->
+        <h2>Flera komponenter med props och med v-bind och typsäkra världen</h2>
+        <div id="app4">
+            <counter-button :initial-value="10"></counter-button>
+            <counter-button :initial-value="20"></counter-button>
+            <counter-button :initial-value="30"></counter-button>
+        </div>
+
+        <!-- Här arbetar vi utan props i komponent -->
+        <h2>Här arbetar vi utan props i komponent</h2>
+        <div id="app5">
+            <name-example></name-example>
+        </div>
+
+        <!-- Här arbetar vi med props i komponent samt typsäkert -->
+        <h2>Här arbetar vi med props i komponent samt typsäkert</h2>
+        <div id="app6">
+            <name-example
+                name="Richard Carlsson"
+                phone-number="0123456789"
+                email="richard.carlsson@iths.se"
+            ></name-example>
+            <name-example
+                name="Bertil Svensson"
+                phone-number="0123456789"
+                email="richard.carlsson@iths.se"
+            ></name-example>
+            <name-example
+                name="Eva Eriksson"
+                phone-number="0123456789"
+                email="richard.carlsson@iths.se"
+            ></name-example>
+            <name-example
+                name="Richard Carlsson"
+                phone-number="0123456789"
+                email="richard.carlsson@iths.se"
+            ></name-example>
+            <name-example
+                name="Richard Carlsson"
+                phone-number="0123456789"
+                email="richard.carlsson@iths.se"
+            ></name-example>
+        </div>
+
+        <!-- Här arbetar vi med custom events, vi skickar med extra information tillbaka -->
+        <h2>
+            Här arbetar vi med custom events, vi skickar med extra information
+            tillbaka
+        </h2>
+        <div id="app7">
+            <counter-button
+                @value-incremented="onValueIncremented"
+            ></counter-button>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
 </html>
